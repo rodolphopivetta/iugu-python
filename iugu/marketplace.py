@@ -23,6 +23,10 @@ class MarketPlace(Action):
         url = self.api.make_url(['accounts', id, 'request_withdraw'])
         return self.api.post(url, data)
 
+    def bank_verification(self, data):
+        url = self.api.make_url(['bank_verification'])
+        return self.api.post(url, data)
+
     def sub_account(self, id):
         url = self.api.make_url(['accounts', id])
         return super(MarketPlace, self).list(url)
