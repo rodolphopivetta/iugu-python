@@ -27,6 +27,10 @@ class MarketPlace(Action):
         url = self.api.make_url(['bank_verification'])
         return self.api.post(url, data)
 
+    def bank_verification_status(self):
+        url = self.api.make_url(['bank_verification'])
+        return self.api.get(url)
+
     def sub_account(self, id):
         url = self.api.make_url(['accounts', id])
         return super(MarketPlace, self).list(url)
